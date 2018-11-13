@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem should render 1`] = `
+<div>
+  <span
+    className="title"
+  >
+    Auto wassen
+  </span>
+   - 
+  <span>
+    1
+  </span>
+</div>
+`;
