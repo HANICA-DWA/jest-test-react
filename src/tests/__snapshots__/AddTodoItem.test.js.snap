@@ -6,6 +6,7 @@ exports[`AddTodoItem is rendered 1`] = `
 >
   <input
     name="todo"
+    placeholder="Type a todo and press Enter.."
   />
 </form>
 `;

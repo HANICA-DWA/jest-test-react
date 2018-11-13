@@ -8,7 +8,7 @@ const AddTodoItem = (props) => {
   }
 
   return <form onSubmit={onSubmit}>
-    <input name="todo" />
+    <input name="todo" placeholder="Type a todo and press Enter.."/>
   </form>
 }
 

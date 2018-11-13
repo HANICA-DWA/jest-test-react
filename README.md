@@ -12,3 +12,7 @@ npm install
 npm t
 ```
 
+## What is in this repo?
+
+* two examples with plain components
+* example with a reducer (reducer is not used in the app)
