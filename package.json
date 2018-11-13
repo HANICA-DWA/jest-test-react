@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "jest": "^23.6.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1"
@@ -24,6 +23,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "jest": "^23.6.0",
     "babel-preset-env": "^1.7.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
