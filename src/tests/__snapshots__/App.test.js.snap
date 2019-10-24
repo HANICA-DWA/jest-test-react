@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unconnected App is rendered 1`] = `
+<div
+  className="App"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      name="todo"
+      placeholder="Type a todo and press Enter.."
+    />
+  </form>
+</div>
+`;

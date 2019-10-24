@@ -1,7 +1,4 @@
-import { createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
-
-const initialState = {
+export const initialState = {
   todos: [],
   todoCount: 0
 }
@@ -15,7 +12,7 @@ export function myFakeReducer (state = initialState, action = defaultAction) {
     case "ADD_TODO":
       return {
         ...state,
-        todos: state.todos.concat(action.payload)
+        todos: state.todos.concat({...action.payload, id: state.todoCount + 1})
       }
     case "INCREMENT":
       return {
@@ -43,7 +40,12 @@ export const addTodo = todo =>
     dispatch(increment())
   }
 
-export const store = createStore(
-  myFakeReducer,
-  applyMiddleware(thunk)
-);
+const promiseTimeout = (cb, delay) => new Promise((resolve)=> {
+  setTimeout(() => {
+    resolve(cb())
+  }, delay)
+})
+
+export const asyncTodo = todo => dispatch => {
+  return promiseTimeout(() => dispatch(addTodo(todo)), 2000)
+}

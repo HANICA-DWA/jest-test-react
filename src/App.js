@@ -1,35 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { connect } from 'react-redux'
+
 import TodoItem from './TodoItem'
 import AddTodoItem from './AddTodoItem'
+import { addTodo } from './fakereducer'
+import './App.css';
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      todos: [],
-      todoAmount: 0
-    }
-  }
+export function App (props) {
+  return (
+    <div className="App">
+      <AddTodoItem addTodo={(e) => props.addTodo(e)} />
+      {props.todos.map(todo => <TodoItem key={todo.id} todo={todo} />)}
+    </div>
+  );
+}
 
-  addTodoItem (todo) {
-    todo.id = this.state.todoAmount
-    console.log(todo)
-    this.setState({
-      todos: this.state.todos.concat(todo),
-      todoAmount: this.state.todoAmount + 1
-    })
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <AddTodoItem addTodo={(e) => this.addTodoItem(e)} />
-        {this.state.todos.map(todo => <TodoItem key={todo.id} todo={todo} />)}
-      </div>
-    );
+const mapStateToProps = (state) => {
+  return {
+    todos: state.todos
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addTodo: (todo) => dispatch(addTodo(todo))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
