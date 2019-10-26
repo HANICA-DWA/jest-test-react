@@ -6,7 +6,9 @@ exports[`AddTodoItem is rendered 1`] = `
 >
   <input
     name="todo"
+    onChange={[Function]}
     placeholder="Type a todo and press Enter.."
+    value=""
   />
 </form>
 `;

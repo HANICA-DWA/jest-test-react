@@ -9,7 +9,7 @@ import './App.css';
 export function App (props) {
   return (
     <div className="App">
-      <AddTodoItem addTodo={(e) => props.addTodo(e)} />
+      <AddTodoItem addTodo={(todo) => props.addTodo(todo)} />
       {props.todos.map(todo => <TodoItem key={todo.id} todo={todo} />)}
     </div>
   );

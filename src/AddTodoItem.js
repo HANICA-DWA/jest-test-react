@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const AddTodoItem = (props) => {
+  const [name, setName] = useState('')
+
   const onSubmit = (e) => {
     e.preventDefault()
-    props.addTodo({name: e.target.todo.value})
-    e.target.todo.value = ""
+    props.addTodo({name: name})
+    setName('')
   }
 
   return <form onSubmit={onSubmit}>
-    <input name="todo" placeholder="Type a todo and press Enter.."/>
+    <input
+      name="todo"
+      value={name}
+      onChange={e => setName(e.target.value)}
+      placeholder="Type a todo and press Enter.."
+    />
   </form>
 }
 
